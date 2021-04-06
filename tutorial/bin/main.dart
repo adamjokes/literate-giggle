@@ -49,9 +49,6 @@ void main() {
 
 //  var scores = students.values.toList();
 
-
-
-
   //TODO Task 7: Calculate average score
   var average = scores.reduce((total, item) => total + item) / scores.length;
   print(average);
@@ -68,10 +65,10 @@ void main() {
   };
 
   students.forEach((key, value) {
-    var grade = calculateScores(value;
-    counts[grade]++;  // branchless techniques
+    var grade = calculateScores(value);
+    counts[grade]++; // branchless techniques
 
-        // switch (calculateScores(value)) {
+    // switch (calculateScores(value)) {
     //   case 'A':
     //     countA++;
     //     break;
@@ -100,8 +97,6 @@ void main() {
 
   // var greeting = "hello 'World'";
 
-
-
   print("Grade\t\tFreq (using forEach)");
   print('------\t\t-----');
   gradeFrequency.forEach((key, value) => print('$key\t\t$value'));
@@ -112,10 +107,9 @@ void main() {
     ++gradeFreq[calculateScores(curr)];
   });
 
-  
-
   // var total = scores.fold(0, (sum, n) => sum + n)
-  var freqs = scores.fold( {'A': 0, 'B': 0, 'C': 0, 'D': 0, 'E': 0}, (counts, score) => counts[ calculateScores(score)  ]);
+  var freqs = scores.fold({'A': 0, 'B': 0, 'C': 0, 'D': 0, 'E': 0},
+      (counts, score) => counts[calculateScores(score)]);
 
   print("Grade\t\tFreq (using fold)");
   print('------\t\t-----');
